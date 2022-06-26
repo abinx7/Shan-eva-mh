@@ -116,9 +116,8 @@ async def next_page(bot, query):
             )
     btn.insert(0,
             [
-                InlineKeyboardButton("ᴺᵉʷ ᴹᵒᵛⁱᵉˢ", url="https://t.me/+26XbUS8O3cM1MDU1"),
-                InlineKeyboardButton("Aʟʟ Mᴏᴠɪᴇs", url="https://t.me/+VWYQKLaIim4yNjk1"),
-                InlineKeyboardButton("Tᴠ Wᴇʙ Sᴇʀɪᴇs", url="https://t.me/+26XbUS8O3cM1MDU1")
+                InlineKeyboardButton("⭕️ Movie", url="https://t.me/+26XbUS8O3cM1MDU1"),
+                InlineKeyboardButton("Series ⭕️", url="https://t.me/+VWYQKLaIim4yNjk1")
             ])
 
     btn.insert(0, [
@@ -928,19 +927,22 @@ async def auto_filter(client, msg, spoll=False):
         BUTTONS[key] = search
         req = message.from_user.id if message.from_user else 0
         btn.append(
-            [InlineKeyboardButton(text=f"📄 1/{round(int(total_results) / 10)} 📑", callback_data="pages"),
+            [InlineKeyboardButton(text=f"🗓 1/{round(int(total_results) / 10)}", callback_data="pages"),
              InlineKeyboardButton(text="Cʜᴇᴄᴋ PM!", url=f"https://t.me/{temp.U_NAME}"),
-             InlineKeyboardButton(text="Nᴇxᴛ ⏩", callback_data=f"next_{req}_{key}_{offset}")]
-      
+             InlineKeyboardButton(text="NEXT ⏩", callback_data=f"next_{req}_{key}_{offset}")]
+        )
     else:
         btn.append(
-            [InlineKeyboardButton(text="📑 1/1 ", callback_data="pages"),
+            [InlineKeyboardButton(text="🗓 1/1", callback_data="pages"),
              InlineKeyboardButton(text="Cʜᴇᴄᴋ PM!", url=f"https://t.me/{temp.U_NAME}")]
         )
 
     btn.insert(0, [
-        InlineKeyboardButton("Nᴇᴡ Mᴏᴠɪᴇs 🍿", url="https://t.me/MovieHub_OTT"),
-        InlineKeyboardButton("📺 Tᴠ & Wᴇʙ Sᴇʀɪᴇs", url="https://t.me/MH_Series")
+        InlineKeyboardButton("𝐍ᴇᴡ 𝐌ᴏᴠɪᴇ𝐬 🍿", url="https://t.me/MovieHub_OTT"),
+        InlineKeyboardButton("📺 𝐓ᴠ & 𝐖ᴇʙ 𝐒ᴇʀɪᴇ𝐬", url="https://t.me/MH_Series")
+    ])
+    btn.insert(0, [
+        InlineKeyboardButton("⭕️ Join Our Channel ⭕️",url="https://t.me/imdbprobots/4")
     ])
     reply_id = message.reply_to_message.message_id if message.reply_to_message else message.message_id
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
