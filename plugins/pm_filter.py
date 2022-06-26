@@ -116,8 +116,8 @@ async def next_page(bot, query):
             )
     btn.insert(0,
             [
-                InlineKeyboardButton("𝐍ᴇᴡ 𝐌ᴏᴠɪᴇ𝐬 🍿", url="https://t.me/MovieHub_OTT"),
-                InlineKeyboardButton("🤖 𝐂ʜᴇᴄᴋ 𝐏𝐌 🤖", url=f"https://t.me/{temp.U_NAME}"),
+                InlineKeyboardButton("𝐍ᴇᴡ 𝐌ᴏᴠɪᴇ𝐬", url="https://t.me/MovieHub_OTT"),
+                InlineKeyboardButton("𝐂𝐡𝐞𝐜𝐤 𝐏𝐌", url=f"https://t.me/{temp.U_NAME}"),
                 InlineKeyboardButton("𝐒ᴇʀɪᴇ𝐬", url="https://t.me/MH_Series")
             ])
     try:
@@ -926,11 +926,11 @@ async def auto_filter(client, msg, spoll=False):
         btn.append(
             [InlineKeyboardButton(text=f"📄 1/{round(int(total_results) / 10)} 📑", callback_data="pages"),
              InlineKeyboardButton(text="𝐂ʜᴇᴄᴋ 𝐏𝐌!", url=f"https://t.me/{temp.U_NAME}"),
-             InlineKeyboardButton(text="NEXT ⏩", callback_data=f"next_{req}_{key}_{offset}")]
+             InlineKeyboardButton(text="𝐍ᴇ𝐱ᴛ »»", callback_data=f"next_{req}_{key}_{offset}")]
         )
     else:
         btn.append(
-            [InlineKeyboardButton(text="📃 1/1", callback_data="pages"),
+            [InlineKeyboardButton(text="📄 1/1 📑", callback_data="pages"),
              InlineKeyboardButton(text="𝐂ʜᴇᴄᴋ 𝐏𝐌!", url=f"https://t.me/{temp.U_NAME}")]
         )
 
