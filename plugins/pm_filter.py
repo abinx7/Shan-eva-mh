@@ -98,31 +98,28 @@ async def next_page(bot, query):
     if n_offset == 0:
         btn.append(
             [InlineKeyboardButton("🔙 Bᴀᴄᴋ", callback_data=f"next_{req}_{key}_{off_set}"),
-             InlineKeyboardButton(text=f"Cʜᴇᴄᴋ PM!", url=f"https://t.me/{temp.U_NAME}"),
+             InlineKeyboardButton(text=f"𝐂ʜᴇᴄᴋ 𝐏𝐌!", url=f"https://t.me/{temp.U_NAME}"),
              InlineKeyboardButton(f"📄 {round(int(offset) / 10) + 1} / {round(total / 10)} 📑",
                                   callback_data="pages")]
         )
     elif off_set is None:
         btn.append(
             [InlineKeyboardButton(f"📄 {round(int(offset) / 10) + 1} / {round(total / 10)} 📑", callback_data="pages"),
-             InlineKeyboardButton(text=f"Cʜᴇᴄᴋ PM!", url=f"https://t.me/{temp.U_NAME}"),
-             InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{req}_{key}_{n_offset}")])
+             InlineKeyboardButton(text=f"𝐂ʜᴇᴄᴋ 𝐏𝐌!", url=f"https://t.me/{temp.U_NAME}"),
+             InlineKeyboardButton("𝐍ᴇ𝐱ᴛ »»", callback_data=f"next_{req}_{key}_{n_offset}")])
     else:
         btn.append(
             [
                 InlineKeyboardButton("🔙 Bᴀᴄᴋ", callback_data=f"next_{req}_{key}_{off_set}"),
                 InlineKeyboardButton(f"📄 {round(int(offset) / 10) + 1} / {round(total / 10)} 📑", callback_data="pages"),
-                InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{req}_{key}_{n_offset}")]
+                InlineKeyboardButton("𝐍ᴇ𝐱ᴛ »»", callback_data=f"next_{req}_{key}_{n_offset}")]
             )
     btn.insert(0,
             [
-                InlineKeyboardButton("🤖 Check Bot PM First 🤖", url=f"https://t.me/{temp.U_NAME}")
+                InlineKeyboardButton("𝐍ᴇᴡ 𝐌ᴏᴠɪᴇ𝐬 🍿", url="https://t.me/MovieHub_OTT"),
+                InlineKeyboardButton("🤖 𝐂ʜᴇᴄᴋ 𝐏𝐌 🤖", url=f"https://t.me/{temp.U_NAME}"),
+                InlineKeyboardButton("𝐒ᴇʀɪᴇ𝐬", url="https://t.me/MH_Series")
             ])
-
-    btn.insert(0, [
-        InlineKeyboardButton("𝐍ᴇᴡ 𝐌ᴏᴠɪᴇ𝐬 🍿", url="https://t.me/MovieHub_OTT"),
-        InlineKeyboardButton("📺 𝐓ᴠ & 𝐖ᴇʙ 𝐒ᴇʀɪᴇ𝐬", url="https://t.me/MH_Series")
-    ])
     try:
         await query.edit_message_reply_markup(
             reply_markup=InlineKeyboardMarkup(btn)
@@ -928,13 +925,13 @@ async def auto_filter(client, msg, spoll=False):
         req = message.from_user.id if message.from_user else 0
         btn.append(
             [InlineKeyboardButton(text=f"📄 1/{round(int(total_results) / 10)} 📑", callback_data="pages"),
-             InlineKeyboardButton(text="Cʜᴇᴄᴋ PM!", url=f"https://t.me/{temp.U_NAME}"),
+             InlineKeyboardButton(text="𝐂ʜᴇᴄᴋ 𝐏𝐌!", url=f"https://t.me/{temp.U_NAME}"),
              InlineKeyboardButton(text="NEXT ⏩", callback_data=f"next_{req}_{key}_{offset}")]
         )
     else:
         btn.append(
             [InlineKeyboardButton(text="📃 1/1", callback_data="pages"),
-             InlineKeyboardButton(text="Cʜᴇᴄᴋ PM!", url=f"https://t.me/{temp.U_NAME}")]
+             InlineKeyboardButton(text="𝐂ʜᴇᴄᴋ 𝐏𝐌!", url=f"https://t.me/{temp.U_NAME}")]
         )
 
     btn.insert(0, [
