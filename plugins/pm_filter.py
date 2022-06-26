@@ -116,12 +116,12 @@ async def next_page(bot, query):
             )
     btn.insert(0,
             [
-                InlineKeyboardButton("⭕️ Movie", url="https://t.me/+26XbUS8O3cM1MDU1"),
-                InlineKeyboardButton("Series ⭕️", url="https://t.me/+VWYQKLaIim4yNjk1")
+                InlineKeyboardButton("🤖 Check Bot PM First 🤖", url=f"https://t.me/{temp.U_NAME}")
             ])
 
     btn.insert(0, [
-        InlineKeyboardButton("🤖 Check Bot PM First 🤖", url=f"https://t.me/{temp.U_NAME}")
+        InlineKeyboardButton("𝐍ᴇᴡ 𝐌ᴏᴠɪᴇ𝐬 🍿", url="https://t.me/MovieHub_OTT"),
+        InlineKeyboardButton("📺 𝐓ᴠ & 𝐖ᴇʙ 𝐒ᴇʀɪᴇ𝐬", url="https://t.me/MH_Series")
     ])
     try:
         await query.edit_message_reply_markup(
@@ -940,9 +940,6 @@ async def auto_filter(client, msg, spoll=False):
     btn.insert(0, [
         InlineKeyboardButton("𝐍ᴇᴡ 𝐌ᴏᴠɪᴇ𝐬 🍿", url="https://t.me/MovieHub_OTT"),
         InlineKeyboardButton("📺 𝐓ᴠ & 𝐖ᴇʙ 𝐒ᴇʀɪᴇ𝐬", url="https://t.me/MH_Series")
-    ])
-    btn.insert(0, [
-        InlineKeyboardButton("⭕️ Join Our Channel ⭕️",url="https://t.me/imdbprobots/4")
     ])
     reply_id = message.reply_to_message.message_id if message.reply_to_message else message.message_id
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
