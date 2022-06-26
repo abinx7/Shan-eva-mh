@@ -117,7 +117,7 @@ async def next_page(bot, query):
     btn.insert(0,
             [
                 InlineKeyboardButton("𝐍ᴇᴡ 𝐌ᴏᴠɪᴇ𝐬", url="https://t.me/MovieHub_OTT"),
-                InlineKeyboardButton("🤖𝐂𝐡𝐞𝐜𝐤 𝐏𝐌!🤖", url=f"https://t.me/{temp.U_NAME}"),
+                InlineKeyboardButton("𝐂𝐡𝐞𝐜𝐤 𝐏𝐌!", url=f"https://t.me/{temp.U_NAME}"),
                 InlineKeyboardButton("𝐒ᴇʀɪᴇ𝐬", url="https://t.me/MH_Series")
             ])
     try:
@@ -379,11 +379,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
             f_caption = f"{files.file_name}"
         buttons = [
             [
-                InlineKeyboardButton('⭕️ Support', url='https://t.me/JOSPSupport'),
-                InlineKeyboardButton('Channel ⭕️', url='https://t.me/JosProjects')
+                InlineKeyboardButton('⭕️ Support', url='https://t.me/MoviesHub_Discuss'),
+                InlineKeyboardButton('Channel ⭕️', url='https://t.me/MH_Linkz')
             ],
             [
-                InlineKeyboardButton('🎬 Series & Movie Club 🎬', url=f'https://t.me/+y53tWFUw6Q43NzE9')
+                InlineKeyboardButton('🎬 𝐀ʟʟ 𝐌ᴏᴠɪᴇ𝐬 𝐇ᴜʙ 📡', url=f'https://t.me/MHChats')
             ]
             ]
 
@@ -433,11 +433,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
             f_caption = f"{title}"
         buttons = [
             [
-                InlineKeyboardButton('⭕️ Support', url='https://t.me/JOSPSupport'),
-                InlineKeyboardButton('Channel ⭕️', url='https://t.me/JosProjects')
+                InlineKeyboardButton('⭕️ Support', url='https://t.me/MoviesHub_Discuss'),
+                InlineKeyboardButton('Channel ⭕️', url='https://t.me/MH_Linkz')
             ],
             [
-                InlineKeyboardButton('🎬 Series & Movie Club 🎬', url=f'https://t.me/+y53tWFUw6Q43NzE9')
+                InlineKeyboardButton('🎬 𝐀ʟʟ 𝐌ᴏᴠɪᴇ𝐬 𝐇ᴜʙ 📡', url=f'https://t.me/MHChats')
             ]
             ]
         await query.answer()
