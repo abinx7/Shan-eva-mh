@@ -928,19 +928,19 @@ async def auto_filter(client, msg, spoll=False):
         BUTTONS[key] = search
         req = message.from_user.id if message.from_user else 0
         btn.append(
-            [InlineKeyboardButton(text=f"🗓 1/{round(int(total_results) / 10)}", callback_data="pages"),
-             InlineKeyboardButton(text="Check PM!", url=f"https://t.me/{temp.U_NAME}"),
+            [InlineKeyboardButton(text=f"📄 1/{round(int(total_results) / 10)} 📑", callback_data="pages"),
+             InlineKeyboardButton(text="𝐂ʜᴇᴄᴋ 𝐏𝐌!", url=f"https://t.me/{temp.U_NAME}"),
              InlineKeyboardButton(text="NEXT ⏩", callback_data=f"next_{req}_{key}_{offset}")]
         )
     else:
         btn.append(
-            [InlineKeyboardButton(text="🗓 1/1", callback_data="pages"),
-             InlineKeyboardButton(text="Check PM!", url=f"https://t.me/{temp.U_NAME}")]
+            [InlineKeyboardButton(text="📑 1/1 ", callback_data="pages"),
+             InlineKeyboardButton(text="𝐂ʜᴇᴄᴋ 𝐏𝐌!", url=f"https://t.me/{temp.U_NAME}")]
         )
 
     btn.insert(0, [
-        InlineKeyboardButton("Nᴇᴡ Mᴏᴠɪᴇs 🍿", url="https://t.me/MovieHub_OTT"),
-        InlineKeyboardButton("📺 Tᴠ-Wᴇʙ Sᴇʀɪᴇs", url="https://t.me/MH_Series")
+        InlineKeyboardButton("🎬 𝐍ᴇᴡ 𝐌ᴏᴠɪᴇ𝐬", url="https://t.me/MovieHub_OTT"),
+        InlineKeyboardButton("📺 𝐓ᴠ & 𝐖ᴇʙ 𝐒ᴇʀɪᴇ𝐬", url="https://t.me/MH_Series")
     ])
     reply_id = message.reply_to_message.message_id if message.reply_to_message else message.message_id
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
