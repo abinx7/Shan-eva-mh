@@ -938,7 +938,7 @@ async def auto_filter(client, msg, spoll=False):
         )
 
     btn.insert(0, [
-        InlineKeyboardButton("⭕️ Movie", url="https://t.me/+26XbUS8O3cM1MDU1"),
+        InlineKeyboardButton("ᴺᵉʷ ᴹᵒᵛⁱᵉˢ", url="https://t.me/+26XbUS8O3cM1MDU1"),
         InlineKeyboardButton("Series ⭕️", url="https://t.me/+VWYQKLaIim4yNjk1")
     ])
     btn.insert(0, [
