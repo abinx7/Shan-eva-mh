@@ -30,7 +30,7 @@ async def start(client, message):
             ]
             ]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.send_photo(chat_id=message.chat.id, photo='a942df989465ab5bd35d8', reply_markup=reply_markup, reply_to_message_id=message.message_id)
+        await client.send_photo(chat_id=message.chat.id, photo='https://telegra.ph/file/a942df989465ab5bd35d8.jpg', reply_markup=reply_markup, reply_to_message_id=message.message_id)
         await asyncio.sleep(60)
         if not await db.get_chat(message.chat.id):
             total=await client.get_chat_members_count(message.chat.id)
