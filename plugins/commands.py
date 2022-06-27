@@ -23,7 +23,7 @@ async def start(client, message):
     if message.chat.type in ['group', 'supergroup']:
         buttons = [
             [
-                InlineKeyboardButton('⭕️ Updates ⭕️', url='https://t.me/josprojects')
+                InlineKeyboardButton('⭕️ Updates ⭕️', url='https://t.me/MoviesHub_Updates')
             ],
             [
                 InlineKeyboardButton('🛠️ Help', url=f"https://t.me/{temp.U_NAME}?start=help"),
@@ -244,11 +244,11 @@ async def start(client, message):
         f_caption = f"{files.file_name}"
     buttons = [
         [
-             InlineKeyboardButton('⭕️ Support', url='https://t.me/MoviesHub_Discuss'),
-             InlineKeyboardButton('Channel ⭕️', url='https://t.me/MH_Linkz')
-            ],
-            [
-             InlineKeyboardButton('🎬 𝐀ʟʟ 𝐌ᴏᴠɪᴇ𝐬 𝐇ᴜʙ 📡', url=f'https://t.me/MHChats')
+            InlineKeyboardButton('⭕️ Support', url='https://t.me/MoviesHub_Discuss'),
+            InlineKeyboardButton('Channel ⭕️', url='https://t.me/MH_Linkz')
+        ],
+        [
+            InlineKeyboardButton('🎬 𝐀ʟʟ 𝐌ᴏᴠɪᴇ𝐬 𝐇ᴜʙ 📡', url=f'https://t.me/MHChats')
         ]
         ]
     await client.send_cached_media(
