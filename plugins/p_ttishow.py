@@ -38,7 +38,7 @@ async def save_group(bot, message):
             return
         buttons = [[
             InlineKeyboardButton('ℹ️ Help', url=f"https://t.me/{temp.U_NAME}?start=help"),
-            InlineKeyboardButton('Updates 📢', url='https://t.me/josprojects/221')
+            InlineKeyboardButton('Updates 📢', url='https://t.me/MoviesHub_Updates')
         ]]
         reply_markup=InlineKeyboardMarkup(buttons)
         await message.reply_text(
@@ -57,7 +57,7 @@ async def save_group(bot, message):
                     except:
                         pass
                 temp.MELCOW['welcome'] = await message.reply_text(
-                text=f"<b>Hᴇʏ! {u.mention}, Mᴏᴠɪᴇs Aʀᴇ Oɴʟʏ Aᴠᴀɪʟᴀʙʟᴇ Iғ Yᴏᴜ Mᴜsᴛ Bᴇ Oɴ <u>Oᴜʀ Uᴘᴅᴀᴛᴇ Cʜᴀɴɴᴇʟ</u> Bᴇғᴏʀᴇ Yᴏᴜ Asᴋ Fᴏʀ Mᴏᴠɪᴇs</b>\n\n<b>👇 Join Our Update Channel 👇</b>",
+                text=f"<b>Hᴇʏ! {u.mention}, Mᴏᴠɪᴇs Aʀᴇ Oɴʟʏ Aᴠᴀɪʟᴀʙʟᴇ Iғ Yᴏᴜ Mᴜsᴛ Bᴇ Oɴ Oᴜʀ <u>Uᴘᴅᴀᴛᴇ Cʜᴀɴɴᴇʟ</u> Bᴇғᴏʀᴇ Yᴏᴜ Asᴋ Fᴏʀ Mᴏᴠɪᴇs</b>\n\n<b>👇 Join Our Update Channel 👇</b>",
                 disable_web_page_preview = True,
                 reply_markup=InlineKeyboardMarkup(buttons))
 
