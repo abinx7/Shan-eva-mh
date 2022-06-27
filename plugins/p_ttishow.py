@@ -53,7 +53,6 @@ async def save_group(bot, message):
             ]]
                 if (temp.MELCOW).get('welcome') is not None:
                     try:
-                        await asyncio.sleep(5)
                         await (temp.MELCOW['welcome']).delete()
                     except:
                         pass
@@ -61,6 +60,7 @@ async def save_group(bot, message):
                 text=f"<b>👋 Hi! {u.mention},</b> Welcome to <b>{message.chat.title}</b>\n\n<b>👇 Official Projects Channels 👇</b>",
                 disable_web_page_preview = True,
                 reply_markup=InlineKeyboardMarkup(buttons))
+                
 
 @Client.on_message(filters.command('leave') & filters.user(ADMINS))
 async def leave_a_chat(bot, message):
