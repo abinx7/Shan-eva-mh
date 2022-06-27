@@ -53,8 +53,7 @@ async def save_group(bot, message):
             ]]
                 if (temp.MELCOW).get('welcome') is not None:
                     try:
-                        await (temp.MELCOW['welcome']).delete()
-                        await asyncio.sleep(5)
+                        await (temp.MELCOW['welcome']).delete(5)
                     except:
                         pass
                 temp.MELCOW['welcome'] = await message.reply_text(
