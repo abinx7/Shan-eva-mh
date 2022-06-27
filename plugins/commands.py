@@ -43,17 +43,14 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, Script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
         buttons = [[
-            InlineKeyboardButton('➕ Add me to your Chat ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+            InlineKeyboardButton('⌨ 𝐀𝐋𝐋 𝐌𝐎𝐕𝐈𝐄𝐒 𝐇𝐔𝐁 ⌨', url='https://t.me/MHChats')
             ],[
-            InlineKeyboardButton('⭕️ Help', callback_data='help'),
-            InlineKeyboardButton('About ⭕️', callback_data='about')
+            InlineKeyboardButton('💺 𝐍𝐞𝐰 𝐌𝐨𝐯𝐢𝐞𝐬 🍿', url='https://t.me/MovieHub_OTT'),
+            InlineKeyboardButton('𝐂𝐡𝐚𝐧𝐧𝐞𝐥𝐬 📋', url='https://t.me/MH_Linkz')
             ],[
-            InlineKeyboardButton('🕵️ Search here Movie 🕵️', switch_inline_query_current_chat='')
-            ],[
-            InlineKeyboardButton('⭕️ Updates', url='https://t.me/josprojects'),
-            InlineKeyboardButton('Movie Club ⭕️', url='https://t.me/+y53tWFUw6Q43NzE9')
-            ],[
-            InlineKeyboardButton('❌ Close the Menu ❌', callback_data='close_data')
+            InlineKeyboardButton('🗣 𝐃𝐢𝐬𝐜𝐮𝐬𝐬 𝐆𝐫𝐩', url='https://t.me/MoviesHub_Discuss'),
+            InlineKeyboardButton('🧩 𝐍𝐞𝐰 𝐋𝐢𝐧𝐤𝐬', url='https://t.me/MH_Linkz'),
+            InlineKeyboardButton('📨 𝘕𝘦𝘸 𝘜𝘱𝘥𝘢𝘵𝘦𝘴', url='https://t.me/MoviesHub_Updates')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
