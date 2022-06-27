@@ -53,11 +53,11 @@ async def save_group(bot, message):
             ]]
                 if (temp.MELCOW).get('welcome') is not None:
                     try:
-                        await (temp.MELCOW['welcome']).delete(5)
+                        await (temp.MELCOW['welcome']).delete()
                     except:
                         pass
                 temp.MELCOW['welcome'] = await message.reply_text(
-                text=f"<b>👋 Hi! {u.mention},</b> Welcome to <b>{message.chat.title}</b>\n\n<b>👇 Official Projects Channels 👇</b>",
+                text=f"<b>Hᴇʏ! {u.mention}, Mᴏᴠɪᴇs Aʀᴇ Oɴʟʏ Aᴠᴀɪʟᴀʙʟᴇ Iғ Yᴏᴜ Mᴜsᴛ Bᴇ Oɴ Oᴜʀ Uᴘᴅᴀᴛᴇ Cʜᴀɴɴᴇʟ Bᴇғᴏʀᴇ Yᴏᴜ Asᴋ Fᴏʀ Mᴏᴠɪᴇs</b>\n\n<b>👇 𝐎𝐮𝐫 𝐔𝐩𝐝𝐚𝐭𝐞 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 👇</b>",
                 disable_web_page_preview = True,
                 reply_markup=InlineKeyboardMarkup(buttons))
 
