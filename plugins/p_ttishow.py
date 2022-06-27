@@ -60,8 +60,8 @@ async def save_group(bot, message):
                 text=f"<b>👋 Hi! {u.mention},</b> Welcome to <b>{message.chat.title}</b>\n\n<b>👇 Official Projects Channels 👇</b>",
                 disable_web_page_preview = True,
                 reply_markup=InlineKeyboardMarkup(buttons))
-                await asyncio.sleep(5)
-                await m.delete()
+         await asyncio.sleep(5)
+         await.delete()
 
 @Client.on_message(filters.command('leave') & filters.user(ADMINS))
 async def leave_a_chat(bot, message):
