@@ -105,25 +105,25 @@ async def next_page(bot, query):
         btn.append(
             [InlineKeyboardButton("«« Bᴀᴄᴋ", callback_data=f"next_{req}_{key}_{off_set}"),
              InlineKeyboardButton(text=f"Cʜᴇᴄᴋ PM!", url=f"https://t.me/{temp.U_NAME}"),
-             InlineKeyboardButton(f"📄 {round(int(offset) / 10) + 1} / {round(total / 10)} 📑",
+             InlineKeyboardButton(f"📄 {round(int(offset) / 15) + 1} / {round(total / 10)} 📑",
                                   callback_data="pages")]
         )
     elif off_set is None:
         btn.append(
-            [InlineKeyboardButton(f"📄 {round(int(offset) / 10) + 1} / {round(total / 10)} 📑", callback_data="pages"),
+            [InlineKeyboardButton(f"📄 {round(int(offset) / 15) + 1} / {round(total / 10)} 📑", callback_data="pages"),
              InlineKeyboardButton(text=f"Cʜᴇᴄᴋ PM!", url=f"https://t.me/{temp.U_NAME}"),
              InlineKeyboardButton("Nᴇxᴛ »»", callback_data=f"next_{req}_{key}_{n_offset}")])
     else:
         btn.append(
             [
                 InlineKeyboardButton("«« Bᴀᴄᴋ", callback_data=f"next_{req}_{key}_{off_set}"),
-                InlineKeyboardButton(f"📄 {round(int(offset) / 10) + 1} / {round(total / 10)} 📑", callback_data="pages"),
+                InlineKeyboardButton(f"📄 {round(int(offset) / 15) + 1} / {round(total / 10)} 📑", callback_data="pages"),
                 InlineKeyboardButton("Nᴇxᴛ »»", callback_data=f"next_{req}_{key}_{n_offset}")]
             )
         btn.append(
             [
-                InlineKeyboardButton(f"Pᴀɢᴇ {round(int(offset) / 10) + 1}", callback_data="pages"),
-                InlineKeyboardButton(f"Tᴏᴛᴀʟ Pᴀɢᴇs {round(total / 10)} 📑", callback_data="pages")]
+                InlineKeyboardButton(f"Pᴀɢᴇ {round(int(offset) / 15) + 1}", callback_data="pages"),
+                InlineKeyboardButton(f"Tᴏᴛᴀʟ Pᴀɢᴇs {round(total / 15)} 📑", callback_data="pages")]
             )
     
     try:
@@ -927,7 +927,7 @@ async def auto_filter(client, msg, spoll=False):
         BUTTONS[key] = search
         req = message.from_user.id if message.from_user else 0
         btn.append(
-            [InlineKeyboardButton(text=f"📄 1/{round(int(total_results) / 10)} 📑", callback_data="pages"),
+            [InlineKeyboardButton(text=f"📄 1/{round(int(total_results) / 15)} 📑", callback_data="pages"),
              InlineKeyboardButton(text="Cʜᴇᴄᴋ PM!", url=f"https://t.me/{temp.U_NAME}"),
              InlineKeyboardButton(text="Nᴇxᴛ »»", callback_data=f"next_{req}_{key}_{offset}")]
         )
