@@ -98,27 +98,27 @@ async def next_page(bot, query):
     if n_offset == 0:
         btn.append(
             [InlineKeyboardButton("🔙 Bᴀᴄᴋ", callback_data=f"next_{req}_{key}_{off_set}"),
-             InlineKeyboardButton(text=f"𝐂ʜᴇᴄᴋ 𝐏𝐌!", url=f"https://t.me/{temp.U_NAME}"),
+             InlineKeyboardButton(text=f"Cʜᴇᴄᴋ PM!", url=f"https://t.me/{temp.U_NAME}"),
              InlineKeyboardButton(f"📄 {round(int(offset) / 10) + 1} / {round(total / 10)} 📑",
                                   callback_data="pages")]
         )
     elif off_set is None:
         btn.append(
             [InlineKeyboardButton(f"📄 {round(int(offset) / 10) + 1} / {round(total / 10)} 📑", callback_data="pages"),
-             InlineKeyboardButton(text=f"𝐂ʜᴇᴄᴋ 𝐏𝐌!", url=f"https://t.me/{temp.U_NAME}"),
-             InlineKeyboardButton("𝐍ᴇ𝐱ᴛ »»", callback_data=f"next_{req}_{key}_{n_offset}")])
+             InlineKeyboardButton(text=f"Cʜᴇᴄᴋ PM!", url=f"https://t.me/{temp.U_NAME}"),
+             InlineKeyboardButton("Nᴇxᴛ »»", callback_data=f"next_{req}_{key}_{n_offset}")])
     else:
         btn.append(
             [
                 InlineKeyboardButton("🔙 Bᴀᴄᴋ", callback_data=f"next_{req}_{key}_{off_set}"),
                 InlineKeyboardButton(f"📄 {round(int(offset) / 10) + 1} / {round(total / 10)} 📑", callback_data="pages"),
-                InlineKeyboardButton("𝐍ᴇ𝐱ᴛ »»", callback_data=f"next_{req}_{key}_{n_offset}")]
+                InlineKeyboardButton("Nᴇxᴛ »»", callback_data=f"next_{req}_{key}_{n_offset}")]
             )
     btn.insert(0,
             [
-                InlineKeyboardButton("𝐍ᴇᴡ 𝐌ᴏᴠɪᴇ𝐬", url="https://t.me/MovieHub_OTT"),
-                InlineKeyboardButton("𝐂𝐡𝐞𝐜𝐤 𝐏𝐌!", url=f"https://t.me/{temp.U_NAME}"),
-                InlineKeyboardButton("𝐒ᴇʀɪᴇ𝐬", url="https://t.me/MH_Series")
+                InlineKeyboardButton("Nᴇᴡ Mᴏᴠɪᴇs", url="https://t.me/MovieHub_OTT"),
+                InlineKeyboardButton("Cʜᴇᴄᴋ PM!", url=f"https://t.me/{temp.U_NAME}"),
+                InlineKeyboardButton("Tᴠ-Wᴇʙ Sᴇʀɪᴇs", url="https://t.me/MH_Series")
             ])
     try:
         await query.edit_message_reply_markup(
