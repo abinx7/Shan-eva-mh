@@ -114,12 +114,12 @@ async def next_page(bot, query):
                 InlineKeyboardButton(f"📄 {round(int(offset) / 10) + 1} / {round(total / 10)} 📑", callback_data="pages"),
                 InlineKeyboardButton("Nᴇxᴛ »»", callback_data=f"next_{req}_{key}_{n_offset}")]
             )
-        btn.insert(0,
+        btn.append(
             [
                 InlineKeyboardButton("Nᴇᴡ Mᴏᴠɪᴇs", url="https://t.me/MovieHub_OTT"),
                 InlineKeyboardButton("Cʜᴇᴄᴋ PM!", url=f"https://t.me/{temp.U_NAME}"),
-                InlineKeyboardButton("Tᴠ-Wᴇʙ Sᴇʀɪᴇs", url="https://t.me/MH_Series")
-            ])
+                InlineKeyboardButton("Tᴠ-Wᴇʙ Sᴇʀɪᴇs", url="https://t.me/MH_Series")]
+            )
     btn.insert(0,
             [
                 InlineKeyboardButton("Nᴇᴡ Mᴏᴠɪᴇs", url="https://t.me/MovieHub_OTT"),
