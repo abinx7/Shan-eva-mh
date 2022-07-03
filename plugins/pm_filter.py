@@ -89,12 +89,12 @@ async def next_page(bot, query):
             for file in files
         ]
 
-    if 0 < offset <= 5:
+    if 0 < offset <= 10:
         off_set = 0
     elif offset == 0:
         off_set = None
     else:
-        off_set = offset - 5
+        off_set = offset - 10
     if n_offset == 0:
         btn.append(
             [InlineKeyboardButton("«« Bᴀᴄᴋ", callback_data=f"next_{req}_{key}_{off_set}"),
@@ -116,7 +116,7 @@ async def next_page(bot, query):
             )
         btn.append(
             [
-                InlineKeyboardButton("Pᴀɢᴇ", url="https://t.me/MovieHub_OTT"),
+                InlineKeyboardButton(f"Pᴀɢᴇ {round(int(offset) / 10) + 1}", callback_data="pages"),
                 InlineKeyboardButton(f"Tᴏᴛᴀʟ Pᴀɢᴇs {round(total / 10)} 📑", callback_data="pages")]
             )
     btn.insert(0,
