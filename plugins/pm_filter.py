@@ -97,7 +97,7 @@ async def next_page(bot, query):
         off_set = offset - 10
     if n_offset == 0:
         btn.append(
-            [InlineKeyboardButton("🔙 Bᴀᴄᴋ", callback_data=f"next_{req}_{key}_{off_set}"),
+            [InlineKeyboardButton("«« Bᴀᴄᴋ", callback_data=f"next_{req}_{key}_{off_set}"),
              InlineKeyboardButton(text=f"Cʜᴇᴄᴋ PM!", url=f"https://t.me/{temp.U_NAME}"),
              InlineKeyboardButton(f"📄 {round(int(offset) / 10) + 1} / {round(total / 10)} 📑",
                                   callback_data="pages")]
@@ -110,13 +110,13 @@ async def next_page(bot, query):
     else:
         btn.append(
             [
-                InlineKeyboardButton("🔙 Bᴀᴄᴋ", callback_data=f"next_{req}_{key}_{off_set}"),
+                InlineKeyboardButton("«« Bᴀᴄᴋ", callback_data=f"next_{req}_{key}_{off_set}"),
                 InlineKeyboardButton(f"📄 {round(int(offset) / 10) + 1} / {round(total / 10)} 📑", callback_data="pages"),
                 InlineKeyboardButton("Nᴇxᴛ »»", callback_data=f"next_{req}_{key}_{n_offset}")]
             )
         btn.append(
             [
-                InlineKeyboardButton("Nᴇᴡ Mᴏᴠɪᴇs", url="https://t.me/MovieHub_OTT"),
+                InlineKeyboardButton("Pᴀɢᴇ", url="https://t.me/MovieHub_OTT"),
                 InlineKeyboardButton(f"Tᴏᴛᴀʟ Pᴀɢᴇs {round(total / 10)} 📑", callback_data="pages")]
             )
     btn.insert(0,
@@ -927,18 +927,18 @@ async def auto_filter(client, msg, spoll=False):
         req = message.from_user.id if message.from_user else 0
         btn.append(
             [InlineKeyboardButton(text=f"📄 1/{round(int(total_results) / 10)} 📑", callback_data="pages"),
-             InlineKeyboardButton(text="𝐂ʜᴇᴄᴋ 𝐏𝐌!", url=f"https://t.me/{temp.U_NAME}"),
-             InlineKeyboardButton(text="𝐍ᴇ𝐱ᴛ »»", callback_data=f"next_{req}_{key}_{offset}")]
+             InlineKeyboardButton(text="Cʜᴇᴄᴋ PM!", url=f"https://t.me/{temp.U_NAME}"),
+             InlineKeyboardButton(text="Nᴇxᴛ »»", callback_data=f"next_{req}_{key}_{offset}")]
         )
     else:
         btn.append(
             [InlineKeyboardButton(text="📄 1/1 📑", callback_data="pages"),
-             InlineKeyboardButton(text="𝐂ʜᴇᴄᴋ 𝐏𝐌!", url=f"https://t.me/{temp.U_NAME}")]
+             InlineKeyboardButton(text="Cʜᴇᴄᴋ PM!", url=f"https://t.me/{temp.U_NAME}")]
         )
 
     btn.insert(0, [
-        InlineKeyboardButton("𝐍ᴇᴡ 𝐌ᴏᴠɪᴇ𝐬 🍿", url="https://t.me/MovieHub_OTT"),
-        InlineKeyboardButton("📺 𝐓ᴠ & 𝐖ᴇʙ 𝐒ᴇʀɪᴇ𝐬", url="https://t.me/MH_Series")
+        InlineKeyboardButton("Nᴇᴡ Mᴏᴠɪᴇs 🍿", url="https://t.me/MovieHub_OTT"),
+        InlineKeyboardButton("📺 Tᴠ-Wᴇʙ Sᴇʀɪᴇs", url="https://t.me/MH_Series")
     ])
     reply_id = message.reply_to_message.message_id if message.reply_to_message else message.message_id
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
