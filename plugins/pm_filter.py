@@ -99,8 +99,7 @@ async def next_page(bot, query):
         btn.append(
             [InlineKeyboardButton("«« Bᴀᴄᴋ", callback_data=f"next_{req}_{key}_{off_set}"),
              InlineKeyboardButton(text=f"Cʜᴇᴄᴋ PM!", url=f"https://t.me/{temp.U_NAME}"),
-             InlineKeyboardButton(f"✗ Cʟᴏsᴇ ✗", callback_data="close_pages"),
-                                  callback_data="pages")]
+             InlineKeyboardButton(f"✗ Cʟᴏsᴇ ✗", callback_data="close_pages")]
         )
     elif off_set is None:
         btn.append(
