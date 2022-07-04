@@ -99,28 +99,29 @@ async def next_page(bot, query):
         btn.append(
             [InlineKeyboardButton("«« Bᴀᴄᴋ", callback_data=f"next_{req}_{key}_{off_set}"),
              InlineKeyboardButton(text=f"Cʜᴇᴄᴋ PM!", url=f"https://t.me/{temp.U_NAME}"),
-             InlineKeyboardButton(f"📃 {round(int(offset) / 10) + 1} / {round(total / 10)}",
+             InlineKeyboardButton(f"⌫Eɴᴅ {round(int(offset) / 10) + 1} / {round(total / 10)}",
                                   callback_data="pages")]
         )
     elif off_set is None:
         btn.append(
-            [InlineKeyboardButton(f"🗓 {round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
+            [InlineKeyboardButton(f" {round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
              InlineKeyboardButton(text=f"Cʜᴇᴄᴋ PM!", url=f"https://t.me/{temp.U_NAME}"),
              InlineKeyboardButton("Nᴇxᴛ »»", callback_data=f"next_{req}_{key}_{n_offset}")])
     else:
         btn.append(
             [
                 InlineKeyboardButton("«« Bᴀᴄᴋ", callback_data=f"next_{req}_{key}_{off_set}"),
-                InlineKeyboardButton(f"🗓 {round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
+                InlineKeyboardButton(f" {round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
                 InlineKeyboardButton("Nᴇxᴛ »»", callback_data=f"next_{req}_{key}_{n_offset}")]
             )
     btn.insert(0,
             [
                 InlineKeyboardButton("Nᴇᴡ Mᴏᴠɪᴇs", url="https://t.me/MovieHub_OTT"),
+                InlineKeyboardButton("🤖 Check Bot PM First 🤖", url=f"https://t.me/{temp.U_NAME}")
                 InlineKeyboardButton("Wᴇʙ Sᴇʀɪᴇs", url="https://t.me/MH_Series")
             ])
 
-    btn.insert(0, [
+    btn.append( [
         InlineKeyboardButton("🤖 Check Bot PM First 🤖", url=f"https://t.me/{temp.U_NAME}")
     ])
     try:
