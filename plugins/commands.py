@@ -42,14 +42,13 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, Script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
         buttons = [[
-            InlineKeyboardButton('⌨ 𝐀𝐋𝐋 𝐌𝐎𝐕𝐈𝐄𝐒 𝐇𝐔𝐁 ⌨', url='https://t.me/MHChats')
+            InlineKeyboardButton('⚡️ ᴄʟɪᴄᴋ ᴛᴏ ᴄʟᴏsᴇ ᴛʜɪs ʙᴜᴛᴛᴏɴs ⚡️', callback_data='start'),
             ],[
-            InlineKeyboardButton('💺 𝐍𝐞𝐰 𝐌𝐨𝐯𝐢𝐞𝐬 🍿', url='https://t.me/MovieHub_OTT'),
-            InlineKeyboardButton('𝐂𝐡𝐚𝐧𝐧𝐞𝐥𝐬 📋', url='https://t.me/MH_Linkz')
+            InlineKeyboardButton('👑 ᴏᴡɴᴇʀ', callback_data='about'),
+            InlineKeyboardButton('👥 ɢʀᴏᴜᴘ', url='https://t.me/MoviesHubGroup2')
             ],[
-            InlineKeyboardButton('🗣 𝐃𝐢𝐬𝐜𝐮𝐬𝐬 𝐆𝐫𝐩', url='https://t.me/MoviesHub_Discuss'),
-            InlineKeyboardButton('🧩 𝐍𝐞𝐰 𝐋𝐢𝐧𝐤𝐬', url='https://t.me/MH_Linkz'),
-            InlineKeyboardButton('📨 𝘕𝘦𝘸 𝘜𝘱𝘥𝘢𝘵𝘦𝘴', url='https://t.me/MoviesHub_Updates')
+            InlineKeyboardButton('🎬 ᴄʜᴀɴɴᴇʟ', url='https://t.me/MH_Linkz'),
+            InlineKeyboardButton('🔐 ᴄʟᴏsᴇ', callback_data='close_pages')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -87,14 +86,13 @@ async def start(client, message):
         return
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[
-            InlineKeyboardButton('⌨ 𝐀𝐋𝐋 𝐌𝐎𝐕𝐈𝐄𝐒 𝐇𝐔𝐁 ⌨', url='https://t.me/MHChats')
+            InlineKeyboardButton('⚡️ ᴄʟɪᴄᴋ ᴛᴏ ᴄʟᴏsᴇ ᴛʜɪs ʙᴜᴛᴛᴏɴs ⚡️', callback_data='start'),
             ],[
-            InlineKeyboardButton('💺 𝐍𝐞𝐰 𝐌𝐨𝐯𝐢𝐞𝐬 🍿', url='https://t.me/MovieHub_OTT'),
-            InlineKeyboardButton('𝐂𝐡𝐚𝐧𝐧𝐞𝐥𝐬 📋', url='https://t.me/MH_Linkz')
+            InlineKeyboardButton('👑 ᴏᴡɴᴇʀ', callback_data='about'),
+            InlineKeyboardButton('👥 ɢʀᴏᴜᴘ', url='https://t.me/MoviesHubGroup2')
             ],[
-            InlineKeyboardButton('🗣 𝐃𝐢𝐬𝐜𝐮𝐬𝐬 𝐆𝐫𝐩', url='https://t.me/MoviesHub_Discuss'),
-            InlineKeyboardButton('🧩 𝐍𝐞𝐰 𝐋𝐢𝐧𝐤𝐬', url='https://t.me/MH_Linkz'),
-            InlineKeyboardButton('📨 𝘕𝘦𝘸 𝘜𝘱𝘥𝘢𝘵𝘦𝘴', url='https://t.me/MoviesHub_Updates')
+            InlineKeyboardButton('🎬 ᴄʜᴀɴɴᴇʟ', url='https://t.me/MH_Linkz'),
+            InlineKeyboardButton('🔐 ᴄʟᴏsᴇ', callback_data='close_pages')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
