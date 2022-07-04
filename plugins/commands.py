@@ -243,11 +243,8 @@ async def start(client, message):
         f_caption = f"{files.file_name}"
     buttons = [
         [
-            InlineKeyboardButton('⭕️ Support', url='https://t.me/MoviesHub_Discuss'),
-            InlineKeyboardButton('Channel ⭕️', url='https://t.me/MH_Linkz')
-        ],
-        [
-            InlineKeyboardButton('🎬 𝐀ʟʟ 𝐌ᴏᴠɪᴇ𝐬 𝐇ᴜʙ 📡', url=f'https://t.me/MHChats')
+            InlineKeyboardButton('Gʀᴘs & Cʜɴʟs', url='https://t.me/MH_Linkz'),
+            InlineKeyboardButton('Sʜᴀʀᴇ', url='https://t.me/share/url?url=https://t.me/MHChats')
         ]
         ]
     await client.send_cached_media(
