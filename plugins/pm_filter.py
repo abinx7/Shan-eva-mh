@@ -446,10 +446,21 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer()
     elif query.data == "start":
         buttons = [[
+            InlineKeyboardButton('⚡ ᴄʟɪᴄᴋ ʜᴇʀᴇ ꜰᴏʀ ᴍᴏʀᴇ ʙᴜᴛᴛᴏɴs ⚡', callback_data='help')
+            ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+        await query.answer('Piracy Is Crime')
+    elif query.data == "help":
+        buttons = [[
             InlineKeyboardButton('⚡️ ᴄʟɪᴄᴋ ᴛᴏ ᴄʟᴏsᴇ ᴛʜɪs ʙᴜᴛᴛᴏɴs ⚡️', callback_data='start'),
             ],[
             InlineKeyboardButton('👑 ᴏᴡɴᴇʀ', callback_data='about'),
-            InlineKeyboardButton('👥 ɢʀᴏᴜᴘ', url='https://t.me/MHChats')
+            InlineKeyboardButton('👥 ɢʀᴏᴜᴘ', url='https://t.me/MoviesHubGroup2')
             ],[
             InlineKeyboardButton('🎬 ᴄʜᴀɴɴᴇʟ', url='https://t.me/MH_Linkz'),
             InlineKeyboardButton('🔐 ᴄʟᴏsᴇ', callback_data='close_pages')
