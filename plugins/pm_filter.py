@@ -1061,7 +1061,6 @@ async def advantage_spell_chok(msg):
             InlineKeyboardButton("⭕️ IMDb", url=f"https://www.imdb.com/find?q="),
         ]
     )
-    await msg.reply_photo(photo="https://telegra.ph/file/c40aefe742c64f500dad5.jpg",
     btn.append([InlineKeyboardButton(text="✘ Cʟᴏsᴇ ✘", callback_data=f'spolling#{user}#close_spellcheck')])
     m = await msg.reply("<b> couldn't find anything related to that\nDid you mean any one of these?\n\n<i>Or go to google or imdb and find the real name</i></b>",
                     reply_markup=InlineKeyboardMarkup(btn))
