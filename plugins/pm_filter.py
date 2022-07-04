@@ -89,6 +89,13 @@ async def next_page(bot, query):
             for file in files
         ]
 
+        btn.insert(0,
+            [
+                InlineKeyboardButton("Nᴇᴡ Mᴏᴠɪᴇs", url="https://t.me/MovieHub_OTT"),
+                InlineKeyboardButton("Cʜᴇᴄᴋ PM!", url=f"https://t.me/{temp.U_NAME}"),
+                InlineKeyboardButton("Wᴇʙ Sᴇʀɪᴇs", url="https://t.me/MH_Series")
+            ])
+
     if 0 < offset <= 10:
         off_set = 0
     elif offset == 0:
@@ -119,13 +126,6 @@ async def next_page(bot, query):
                 InlineKeyboardButton(f"Pᴀɢᴇ {round(int(offset) / 10) + 1}", callback_data="pages"),
                 InlineKeyboardButton(f"Tᴏᴛᴀʟ Pᴀɢᴇs {round(total / 10)} 📑", callback_data="pages")]
             )
-
-        btn.insert(0,
-            [
-                InlineKeyboardButton("Nᴇᴡ Mᴏᴠɪᴇs", url="https://t.me/MovieHub_OTT"),
-                InlineKeyboardButton("Cʜᴇᴄᴋ PM!", url=f"https://t.me/{temp.U_NAME}"),
-                InlineKeyboardButton("Tᴠ-Wᴇʙ Sᴇʀɪᴇs", url="https://t.me/MH_Series")
-            ])    
     try:
         await query.edit_message_reply_markup(
             reply_markup=InlineKeyboardMarkup(btn)
