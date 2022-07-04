@@ -117,7 +117,7 @@ async def next_page(bot, query):
     btn.insert(0,
             [
                 InlineKeyboardButton("Nᴇᴡ Mᴏᴠɪᴇs", url="https://t.me/MovieHub_OTT"),
-                InlineKeyboardButton(f"【{round(int(offset) / 10) + 1} / {round(total / 10)}】", callback_data="pages")
+                InlineKeyboardButton(f"【{round(int(offset) / 10) + 1} / {round(total / 10)}】", callback_data="pages"),
                 InlineKeyboardButton("Wᴇʙ Sᴇʀɪᴇs", url="https://t.me/MH_Series")
             ])
 
