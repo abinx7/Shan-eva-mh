@@ -89,13 +89,6 @@ async def next_page(bot, query):
             for file in files
         ]
 
-        btn.insert(0,
-            [
-                InlineKeyboardButton("Nᴇᴡ Mᴏᴠɪᴇs", url="https://t.me/MovieHub_OTT"),
-                InlineKeyboardButton("Cʜᴇᴄᴋ PM!", url=f"https://t.me/{temp.U_NAME}"),
-                InlineKeyboardButton("Wᴇʙ Sᴇʀɪᴇs", url="https://t.me/MH_Series")
-            ])
-
     if 0 < offset <= 10:
         off_set = 0
     elif offset == 0:
@@ -106,26 +99,30 @@ async def next_page(bot, query):
         btn.append(
             [InlineKeyboardButton("«« Bᴀᴄᴋ", callback_data=f"next_{req}_{key}_{off_set}"),
              InlineKeyboardButton(text=f"Cʜᴇᴄᴋ PM!", url=f"https://t.me/{temp.U_NAME}"),
-             InlineKeyboardButton(f"📄 {round(int(offset) / 10) + 1} / {round(total / 10)} 📑",
+             InlineKeyboardButton(f"📃 {round(int(offset) / 10) + 1} / {round(total / 10)}",
                                   callback_data="pages")]
         )
     elif off_set is None:
         btn.append(
-            [InlineKeyboardButton(f"📄 {round(int(offset) / 10) + 1} / {round(total / 10)} 📑", callback_data="pages"),
+            [InlineKeyboardButton(f"🗓 {round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
              InlineKeyboardButton(text=f"Cʜᴇᴄᴋ PM!", url=f"https://t.me/{temp.U_NAME}"),
              InlineKeyboardButton("Nᴇxᴛ »»", callback_data=f"next_{req}_{key}_{n_offset}")])
     else:
         btn.append(
             [
                 InlineKeyboardButton("«« Bᴀᴄᴋ", callback_data=f"next_{req}_{key}_{off_set}"),
-                InlineKeyboardButton(f"📄 {round(int(offset) / 10) + 1} / {round(total / 10)} 📑", callback_data="pages"),
+                InlineKeyboardButton(f"🗓 {round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
                 InlineKeyboardButton("Nᴇxᴛ »»", callback_data=f"next_{req}_{key}_{n_offset}")]
             )
-        btn.append(
+    btn.insert(0,
             [
-                InlineKeyboardButton(f"Pᴀɢᴇ {round(int(offset) / 10) + 1}", callback_data="pages"),
-                InlineKeyboardButton(f"Tᴏᴛᴀʟ Pᴀɢᴇs {round(total / 10)} 📑", callback_data="pages")]
-            )
+                InlineKeyboardButton("Nᴇᴡ Mᴏᴠɪᴇs", url="https://t.me/MovieHub_OTT"),
+                InlineKeyboardButton("Wᴇʙ Sᴇʀɪᴇs", url="https://t.me/MH_Series")
+            ])
+
+    btn.insert(0, [
+        InlineKeyboardButton("🤖 Check Bot PM First 🤖", url=f"https://t.me/{temp.U_NAME}")
+    ])
     try:
         await query.edit_message_reply_markup(
             reply_markup=InlineKeyboardMarkup(btn)
@@ -385,11 +382,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
             f_caption = f"{files.file_name}"
         buttons = [
             [
-                InlineKeyboardButton('⭕️ Support', url='https://t.me/MoviesHub_Discuss'),
-                InlineKeyboardButton('Channel ⭕️', url='https://t.me/MH_Linkz')
+                InlineKeyboardButton('⭕️ Support', url='https://t.me/JOSPSupport'),
+                InlineKeyboardButton('Channel ⭕️', url='https://t.me/JosProjects')
             ],
             [
-                InlineKeyboardButton('🎬 𝐀ʟʟ 𝐌ᴏᴠɪᴇ𝐬 𝐇ᴜʙ 📡', url=f'https://t.me/MHChats')
+                InlineKeyboardButton('🎬 Series & Movie Club 🎬', url=f'https://t.me/+y53tWFUw6Q43NzE9')
             ]
             ]
 
@@ -439,11 +436,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
             f_caption = f"{title}"
         buttons = [
             [
-                InlineKeyboardButton('⭕️ Support', url='https://t.me/MoviesHub_Discuss'),
-                InlineKeyboardButton('Channel ⭕️', url='https://t.me/MH_Linkz')
+                InlineKeyboardButton('⭕️ Support', url='https://t.me/JOSPSupport'),
+                InlineKeyboardButton('Channel ⭕️', url='https://t.me/JosProjects')
             ],
             [
-                InlineKeyboardButton('🎬 𝐀ʟʟ 𝐌ᴏᴠɪᴇ𝐬 𝐇ᴜʙ 📡', url=f'https://t.me/MHChats')
+                InlineKeyboardButton('🎬 Series & Movie Club 🎬', url=f'https://t.me/+y53tWFUw6Q43NzE9')
             ]
             ]
         await query.answer()
@@ -458,14 +455,17 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer()
     elif query.data == "start":
         buttons = [[
-            InlineKeyboardButton('⌨ 𝐀𝐋𝐋 𝐌𝐎𝐕𝐈𝐄𝐒 𝐇𝐔𝐁 ⌨', url='https://t.me/MHChats')
+            InlineKeyboardButton('➕ Add me to your Chat ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
-            InlineKeyboardButton('💺 𝐍𝐞𝐰 𝐌𝐨𝐯𝐢𝐞𝐬 🍿', url='https://t.me/MovieHub_OTT'),
-            InlineKeyboardButton('𝐂𝐡𝐚𝐧𝐧𝐞𝐥𝐬 📋', url='https://t.me/MH_Linkz')
+            InlineKeyboardButton('⭕️ Help', callback_data='help'),
+            InlineKeyboardButton('About ⭕️', callback_data='about')
             ],[
-            InlineKeyboardButton('🗣 𝐃𝐢𝐬𝐜𝐮𝐬𝐬 𝐆𝐫𝐩', url='https://t.me/MoviesHub_Discuss'),
-            InlineKeyboardButton('🧩 𝐍𝐞𝐰 𝐋𝐢𝐧𝐤𝐬', url='https://t.me/MH_Linkz'),
-            InlineKeyboardButton('📨 𝘕𝘦𝘸 𝘜𝘱𝘥𝘢𝘵𝘦𝘴', url='https://t.me/MoviesHub_Updates')
+            InlineKeyboardButton('🕵️ Search here Movie 🕵️', switch_inline_query_current_chat='')
+            ],[
+            InlineKeyboardButton('⭕️ Updates', url='https://t.me/josprojects'),
+            InlineKeyboardButton('Movie Club ⭕️', url='https://t.me/+y53tWFUw6Q43NzE9')
+            ],[
+            InlineKeyboardButton('❌ Close the Menu ❌', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -927,19 +927,22 @@ async def auto_filter(client, msg, spoll=False):
         BUTTONS[key] = search
         req = message.from_user.id if message.from_user else 0
         btn.append(
-            [InlineKeyboardButton(text=f"📄 1/{round(int(total_results) / 10)} 📑", callback_data="pages"),
+            [InlineKeyboardButton(text=f"🗓 1/{round(int(total_results) / 10)}", callback_data="pages"),
              InlineKeyboardButton(text="Cʜᴇᴄᴋ PM!", url=f"https://t.me/{temp.U_NAME}"),
              InlineKeyboardButton(text="Nᴇxᴛ »»", callback_data=f"next_{req}_{key}_{offset}")]
         )
     else:
         btn.append(
-            [InlineKeyboardButton(text="📄 1/1 📑", callback_data="pages"),
+            [InlineKeyboardButton(text="🗓 1/1", callback_data="pages"),
              InlineKeyboardButton(text="Cʜᴇᴄᴋ PM!", url=f"https://t.me/{temp.U_NAME}")]
         )
 
     btn.insert(0, [
         InlineKeyboardButton("Nᴇᴡ Mᴏᴠɪᴇs 🍿", url="https://t.me/MovieHub_OTT"),
         InlineKeyboardButton("📺 Tᴠ-Wᴇʙ Sᴇʀɪᴇs", url="https://t.me/MH_Series")
+    ])
+    btn.insert(0, [
+        InlineKeyboardButton("⭕️ Join Our Channel ⭕️",url="https://t.me/imdbprobots/4")
     ])
     reply_id = message.reply_to_message.message_id if message.reply_to_message else message.message_id
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
@@ -981,25 +984,25 @@ async def auto_filter(client, msg, spoll=False):
     if imdb and imdb.get('poster'):
         try:
             hehe = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024], reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(btn))
-            await asyncio.sleep(600)
+            await asyncio.sleep(36000)
             await hehe.delete()
             await message.delete()
         except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
             pic = imdb.get('poster')
             poster = pic.replace('.jpg', "._V1_UX360.jpg")
             hmm = await message.reply_photo(photo=poster, caption=cap[:1024], reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(btn))
-            await asyncio.sleep(600)
+            await asyncio.sleep(36000)
             await hmm.delete()
             await message.delete()
         except Exception as e:
             logger.exception(e)
             fek = await message.reply_photo(photo="https://telegra.ph/file/82b5bbbab6d5e5593b6b2.jpg", caption=cap, reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(btn))
-            await asyncio.sleep(600)
+            await asyncio.sleep(36000)
             await fek.delete()
             await msg.delete()
     else:
         fuk = await message.reply_photo(photo="https://telegra.ph/file/8b42f6caf6ef5fd76766f.jpg", caption=cap, reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(btn))
-        await asyncio.sleep(600)
+        await asyncio.sleep(36000)
         await fuk.delete()
         await msg.delete()
     if spoll:
