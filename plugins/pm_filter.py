@@ -70,7 +70,7 @@ async def next_page(bot, query):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"[{get_size(file.file_size)}] {file.file_name}", callback_data=f'files#{file.file_id}'
+                    text=f"{get_size(file.file_size)} {file.file_name}", callback_data=f'files#{file.file_id}'
                 ),
             ]
             for file in files
@@ -99,7 +99,7 @@ async def next_page(bot, query):
         btn.append(
             [InlineKeyboardButton("«« Bᴀᴄᴋ", callback_data=f"next_{req}_{key}_{off_set}"),
              InlineKeyboardButton(text=f"Cʜᴇᴄᴋ PM!", url=f"https://t.me/{temp.U_NAME}"),
-             InlineKeyboardButton(f"⌫Eɴᴅ 【{round(int(offset) / 10) + 1} / {round(total / 10)}】",
+             InlineKeyboardButton(f"⌫ Eɴᴅ {round(int(offset)}",
                                   callback_data="pages")]
         )
     elif off_set is None:
