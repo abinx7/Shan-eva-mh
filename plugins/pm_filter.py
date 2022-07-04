@@ -931,16 +931,13 @@ async def auto_filter(client, msg, spoll=False):
         )
     else:
         btn.append(
-            [InlineKeyboardButton(text="【❶/❶】", callback_data="pages"),
+            [InlineKeyboardButton(text="【１⑅１】", callback_data="pages"),
              InlineKeyboardButton(text="Cʜᴇᴄᴋ PM!", url=f"https://t.me/{temp.U_NAME}")]
         )
 
     btn.insert(0, [
         InlineKeyboardButton("Nᴇᴡ Mᴏᴠɪᴇs 🍿", url="https://t.me/MovieHub_OTT"),
         InlineKeyboardButton("📺 Tᴠ-Wᴇʙ Sᴇʀɪᴇs", url="https://t.me/MH_Series")
-    ])
-    btn.insert(0, [
-        InlineKeyboardButton("⭕️ Join Our Channel ⭕️",url="https://t.me/imdbprobots/4")
     ])
     reply_id = message.reply_to_message.message_id if message.reply_to_message else message.message_id
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
