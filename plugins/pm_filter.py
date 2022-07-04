@@ -70,7 +70,7 @@ async def next_page(bot, query):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"{get_size(file.file_size)} {file.file_name}", callback_data=f'files#{file.file_id}'
+                    text=f"[{get_size(file.file_size)}] {file.file_name}", callback_data=f'files#{file.file_id}'
                 ),
             ]
             for file in files
@@ -930,8 +930,8 @@ async def auto_filter(client, msg, spoll=False):
         )
     else:
         btn.append(
-            [InlineKeyboardButton(text="【1⑅1】", callback_data="pages"),
-             InlineKeyboardButton(text="🤖 Cʜᴇᴄᴋ Bᴏᴛ PM! 🤖", url=f"https://t.me/{temp.U_NAME}")]
+            [InlineKeyboardButton(text="【1 ⑅ 1】", callback_data="pages"),
+             InlineKeyboardButton(text="🤖 Cʜᴇᴄᴋ PM! 🤖", url=f"https://t.me/{temp.U_NAME}")]
         )
 
     btn.insert(0, [
