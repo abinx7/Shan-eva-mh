@@ -57,7 +57,7 @@ async def save_group(bot, message):
                     except:
                         pass
                 temp.MELCOW['welcome'] = await message.reply_text(
-                text=f"<b>Hᴇʏ! {u.mention}, Mᴏᴠɪᴇs Aʀᴇ Oɴʟʏ Aᴠᴀɪʟᴀʙʟᴇ Iғ Yᴏᴜ Mᴜsᴛ Bᴇ Oɴ Oᴜʀ <u>Uᴘᴅᴀᴛᴇ Cʜᴀɴɴᴇʟ</u> Bᴇғᴏʀᴇ Yᴏᴜ Asᴋ Fᴏʀ Mᴏᴠɪᴇs</b>━━━━━━━━━━━━━━━━━\n\n<b>👇🏻 Join Our Update Channel 👇🏻</b>",
+                text=f"<b>Hᴏᴡ Tᴏ Rᴇᴏ̨ᴜᴇsᴛ A Mᴏᴠɪᴇ\nᴱᵍ ⠘ KGF, KGF Chapter 2, KGF 2022\n━━━━━━━━━━━━━━━━━\n Hᴇʏ! {u.mention}, Mᴏᴠɪᴇs Aʀᴇ Oɴʟʏ Aᴠᴀɪʟᴀʙʟᴇ Iғ Yᴏᴜ Mᴜsᴛ Bᴇ Oɴ Oᴜʀ <u>Uᴘᴅᴀᴛᴇ Cʜᴀɴɴᴇʟ</u> Bᴇғᴏʀᴇ Yᴏᴜ Asᴋ Fᴏʀ Mᴏᴠɪᴇs</b>━━━━━━━━━━━━━━━━━\n\n<b>👇🏻 Join Our Update Channel 👇🏻</b>",
                 disable_web_page_preview = True,
                 reply_markup=InlineKeyboardMarkup(buttons))
 
