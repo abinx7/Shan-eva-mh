@@ -1072,8 +1072,9 @@ async def advantage_spell_chok(msg):
     btn.append([InlineKeyboardButton(text="✘ Cʟᴏsᴇ ✘", callback_data=f'spolling#{user}#close_spellcheck')])
     m = await msg.reply("<b> couldn't find anything related to that\nDid you mean any one of these?\n\n<i>Or go to google or imdb and check your spelling</i></b>",
                     reply_markup=InlineKeyboardMarkup(btn))
-    await asyncio.sleep(30)
-    await msg.delete()
+    await asyncio.sleep(20)
+    await fuk.delete()
+    await m.delete()
 
 
 async def manual_filters(client, message, text=False):
