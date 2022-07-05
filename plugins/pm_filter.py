@@ -1065,15 +1065,15 @@ async def advantage_spell_chok(msg):
     ] for k, movie in enumerate(movielist)]
     btn.insert(0,
         [
-            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://www.google.com/search?q='),
-            InlineKeyboardButton("⭕️ IMDb", url=f"https://www.imdb.com/find?q="),
+            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://www.google.com/search?q={search}'),
+            InlineKeyboardButton("⭕️ IMDb", url=f"https://www.imdb.com/find?q={search}"),
         ]
     )
     btn.append([InlineKeyboardButton(text="✘ Cʟᴏsᴇ ✘", callback_data=f'spolling#{user}#close_spellcheck')])
-    m = await msg.reply("<b> couldn't find anything related to that\nDid you mean any one of these?\n\n<i>Or go to google or imdb and find the real name</i></b>",
+    m = await msg.reply("<b> couldn't find anything related to that\nDid you mean any one of these?\n\n<i>Or go to google or imdb and check your spelling</i></b>",
                     reply_markup=InlineKeyboardMarkup(btn))
-    await asyncio.sleep(20)
-    await m.delete()
+    await asyncio.sleep(30)
+    await msg.delete()
 
 
 async def manual_filters(client, message, text=False):
