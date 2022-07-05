@@ -7,6 +7,8 @@ class Script(object):
 
 <b>Here Is The Help For My Commands.</b>"""
 
+    ABOUT_TXT = """ """
+
     SOURCE_TXT = """<b>Source:</b>
 IMDb is a Open source project.
 Source: <a href='https://github.com/josprojects/tgmoviebot'>GitHub - Click here 👈</a>
