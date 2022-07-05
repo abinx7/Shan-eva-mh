@@ -1073,7 +1073,7 @@ async def advantage_spell_chok(msg):
     m = await msg.reply("<b> couldn't find anything related to that\nDid you mean any one of these?\n\n<i>Or go to google or imdb and check your spelling</i></b>",
                     reply_markup=InlineKeyboardMarkup(btn))
     await asyncio.sleep(30)
-    await msg.message.delete()
+    await msg.delete()
 
 
 async def manual_filters(client, message, text=False):
