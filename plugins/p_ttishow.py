@@ -49,16 +49,15 @@ async def save_group(bot, message):
         if settings["welcome"]:
             for u in message.new_chat_members:
                 buttons = [[
-                InlineKeyboardButton('👉 ⚠️ Press me... 🥰 👈', url="https://t.me/MoviesHub_Updates")
+                InlineKeyboardButton('👉🏻 ⚠️ Press me... 🥰 👈🏻', url="https://t.me/MoviesHub_Updates")
             ]]
                 if (temp.MELCOW).get('welcome') is not None:
                     try:
                         await (temp.MELCOW['welcome']).delete()
-                        await asyncio.sleep(20)
                     except:
                         pass
                 temp.MELCOW['welcome'] = await message.reply_text(
-                text=f"<b>Hᴇʏ! {u.mention}, Mᴏᴠɪᴇs Aʀᴇ Oɴʟʏ Aᴠᴀɪʟᴀʙʟᴇ Iғ Yᴏᴜ Mᴜsᴛ Bᴇ Oɴ Oᴜʀ <u>Uᴘᴅᴀᴛᴇ Cʜᴀɴɴᴇʟ</u> Bᴇғᴏʀᴇ Yᴏᴜ Asᴋ Fᴏʀ Mᴏᴠɪᴇs</b>\n\n<b>👇 Join Our Update Channel 👇</b>",
+                text=f"<b>Hᴇʏ! {u.mention}, Mᴏᴠɪᴇs Aʀᴇ Oɴʟʏ Aᴠᴀɪʟᴀʙʟᴇ Iғ Yᴏᴜ Mᴜsᴛ Bᴇ Oɴ Oᴜʀ <u>Uᴘᴅᴀᴛᴇ Cʜᴀɴɴᴇʟ</u> Bᴇғᴏʀᴇ Yᴏᴜ Asᴋ Fᴏʀ Mᴏᴠɪᴇs</b>━━━━━━━━━━━━━━━━━\n\n<b>👇🏻 Join Our Update Channel 👇🏻</b>",
                 disable_web_page_preview = True,
                 reply_markup=InlineKeyboardMarkup(buttons))
 
