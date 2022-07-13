@@ -89,6 +89,15 @@ async def next_page(bot, query):
             for file in files
         ]
 
+
+    btn.insert(0, 
+        [
+            InlineKeyboardButton(f'🍿 ɪɴꜰᴏ', 'movieinfo'),
+            InlineKeyboardButton(f'💭 ᴍᴏᴠɪᴇ 💭', 'movss'),
+            InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ 🍿', 'moviis')
+        ]
+    )
+
     if 0 < offset <= 10:
         off_set = 0
     elif offset == 0:
@@ -378,11 +387,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
         if f_caption is None:
             f_caption = f"{files.file_name}"
         buttons = [
-            [
-                InlineKeyboardButton('Gʀᴘs & Cʜɴʟs', url='https://t.me/MH_Linkz'),
-                InlineKeyboardButton('Sʜᴀʀᴇ', url='https://t.me/share/url?url=https://t.me/MHChats')
-            ]
-            ]
+                    [
+                        InlineKeyboardButton('🚫 ᴅᴇʟᴇᴛᴇ', callback_data="close_pages"),
+                        InlineKeyboardButton('💞 sʜᴀʀᴇ', url="https://t.me/share/url?url=**😱%20@MoviesHub_Updates·⁰%20😱%0A%0Aഏത്%20അർധരാത്രി%20ചോദിച്ചാലും%20പടം%20കിട്ടും,%20ലോകത്തിലെ%20ഒട്ടുമിക്ക%20ഭാഷകളിലുമുള്ള%20സിനിമകളുടെ%20കളക്ഷൻ..%20❤️%0A%0A👇%20GROUP%20LINK%20👇%0A@MoviesHubGroup2%0A@MoviesHubGroup2%0A@MoviesHubGroup2*")
+                    ],
+                    [
+                        InlineKeyboardButton(text=f'🌿 Fɪʟᴇ sɪᴢᴇ 【 {size} 】🌿', callback_data='spellingg')
+                    ]
+                    ]
 
         try:
             if AUTH_CHANNEL and not await is_subscribed(client, query):
@@ -426,14 +438,20 @@ async def cb_handler(client: Client, query: CallbackQuery):
             except Exception as e:
                 logger.exception(e)
                 f_caption = f_caption
+                size = size
         if f_caption is None:
             f_caption = f"{title}"
+        if size is None:
+            size = f"{size}"
         buttons = [
-            [
-                InlineKeyboardButton('Gʀᴘs & Cʜɴʟs', url='https://t.me/MH_Linkz'),
-                InlineKeyboardButton('Sʜᴀʀᴇ', url='https://t.me/share/url?url=https://t.me/MHChats')
-            ]
-            ]
+                    [
+                        InlineKeyboardButton('🚫 ᴅᴇʟᴇᴛᴇ', callback_data="close_pages"),
+                        InlineKeyboardButton('💞 sʜᴀʀᴇ', url="https://t.me/share/url?url=**😱%20@MoviesHub_Updates·⁰%20😱%0A%0Aഏത്%20അർധരാത്രി%20ചോദിച്ചാലും%20പടം%20കിട്ടും,%20ലോകത്തിലെ%20ഒട്ടുമിക്ക%20ഭാഷകളിലുമുള്ള%20സിനിമകളുടെ%20കളക്ഷൻ..%20❤️%0A%0A👇%20GROUP%20LINK%20👇%0A@MoviesHubGroup2%0A@MoviesHubGroup2%0A@MoviesHubGroup2*")
+                    ],
+                    [
+                        InlineKeyboardButton(text=f'🌿 Fɪʟᴇ sɪᴢᴇ 【 {size} 】🌿', callback_data='spellingg')
+                    ]
+                    ]
         await query.answer()
         await client.send_cached_media(
             chat_id=query.from_user.id,
@@ -527,6 +545,21 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
+     elif query.data == "movieinfo":
+        await query.answer("⚠ ɪɴꜰᴏʀᴍᴀᴛɪᴏɴ ⚠\n\nᴀꜰᴛᴇʀ 5 ᴍɪɴᴜᴛᴇ ᴛʜɪꜱ ᴍᴇꜱꜱᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴅᴇʟᴇᴛᴇᴅ\n\nɪꜰ ʏᴏᴜ ᴅᴏ ɴᴏᴛ ꜱᴇᴇ ᴛʜᴇ ʀᴇǫᴜᴇsᴛᴇᴅ ᴍᴏᴠɪᴇ / sᴇʀɪᴇs ꜰɪʟᴇ, ʟᴏᴏᴋ ᴀᴛ ᴛʜᴇ ɴᴇxᴛ ᴘᴀɢᴇ\n\n© Movieshub", show_alert=True)
+
+    elif query.data == "movss":
+        await query.answer("⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\nᴍᴏᴠɪᴇ ʀᴇǫᴜᴇꜱᴛ ꜰᴏʀᴍᴀᴛ\n⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\n\nɢᴏ ᴛᴏ ɢᴏᴏɢʟᴇ ➠ ᴛʏᴘᴇ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ ➠ ᴄᴏᴘʏ ᴄᴏʀʀᴇᴄᴛ ɴᴀᴍᴇ ➠ ᴘᴀꜱᴛᴇ ᴛʜɪꜱ ɢʀᴏᴜᴘ\n\nᴇxᴀᴍᴘʟᴇ : ᴋɢꜰ ᴄʜᴀᴘᴛᴇʀ 2  2022\n\n🚯 ᴅᴏɴᴛ ᴜꜱᴇ ➠ ':(!,./)\n\n©  Movieshub", show_alert=True)
+
+    elif query.data == "moviis":  
+        await query.answer("⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\nꜱᴇʀɪᴇꜱ ʀᴇǫᴜᴇꜱᴛ ꜰᴏʀᴍᴀᴛ\n⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\n\nɢᴏ ᴛᴏ ɢᴏᴏɢʟᴇ ➠ ᴛʏᴘᴇ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ ➠ ᴄᴏᴘʏ ᴄᴏʀʀᴇᴄᴛ ɴᴀᴍᴇ ➠ ᴘᴀꜱᴛᴇ ᴛʜɪꜱ ɢʀᴏᴜᴘ\n\nᴇxᴀᴍᴘʟᴇ : ʟᴏᴋɪ S01 E01\n\n🚯 ᴅᴏɴᴛ ᴜꜱᴇ ➠ ':(!,./)\n\n© Movieshub", show_alert=True)   
+                           
+    elif query.data == "close_pages":
+        await query.message.delete()
+        try:
+            await query.message.reply_to_message.delete()
+        except:
+            pass
     elif query.data == "torrent":
         buttons = [[
             InlineKeyboardButton('« Back', callback_data='help'),
@@ -920,6 +953,14 @@ async def auto_filter(client, msg, spoll=False):
             ]
             for file in files
         ]
+
+    btn.insert(0, 
+        [
+            InlineKeyboardButton(f'🍿 ɪɴꜰᴏ', 'movieinfo'),
+            InlineKeyboardButton(f'💭 ᴍᴏᴠɪᴇ 💭', 'movss'),
+            InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ 🍿', 'moviis')
+        ]
+    )
 
     if offset != "":
         key = f"{message.chat.id}-{message.message_id}"
