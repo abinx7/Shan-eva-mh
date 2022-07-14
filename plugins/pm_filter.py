@@ -976,6 +976,7 @@ async def auto_filter(client, msg, spoll=False):
             [InlineKeyboardButton(text="【1 ⑅ 1】", callback_data="pages"),
              InlineKeyboardButton(text="🤖 Cʜᴇᴄᴋ PM! 🤖", url=f"https://t.me/{temp.U_NAME}")]
         )
+        
         btn.append(
             [InlineKeyboardButton(f"{message.chat.title}",url="https://t.me/")]
         )
